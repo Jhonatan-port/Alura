@@ -1,9 +1,12 @@
 import random
 
-print("bem vido ao jogo de adivinhação")
-
+#variaveis iniciais
 numero_s = random.randint(1, 100)
 vidas = 0
+pontos = 1000
+
+print("bem vido ao jogo de adivinhação")
+#jogador escolhe o nivel
 while vidas == 0:
         
     print("Dificuldade:")
@@ -21,23 +24,26 @@ while vidas == 0:
         print("le direito porra \n")
 
 print(numero_s)
+
+#jogador entra de fato no jogo
 for i in range(0, vidas):
     print("*******************************")
     print(f"tentativa: {i + 1} de {vidas}")
     
     chute = int(input("Digite um numero de 1 a 100: "))
     
-    
+    #Verifica se o chute foi umnumero valido
     if(chute < 1) or (chute > 100):
         print("Digite um numero de 1 a 100")
         continue
-
+    #Verificação se o jogador acerout ou não(retorno booleano)
     acertou = chute == numero_s
     maior = chute > numero_s
     menor = chute < numero_s
     
     print("voce digitou: ", chute)
 
+    #avisa o jogador sobre o erro ou acerto
     if (acertou):
         print("você acertou")
         break
