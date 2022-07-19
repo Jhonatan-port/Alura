@@ -25,7 +25,7 @@ def jogar():
         elif nivel == 3:
             vidas = 3
         else: 
-            print("le direito porra \n")
+            print("Escolha um numero valido \n")
 
     print(numero_s)
 
