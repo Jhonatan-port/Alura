@@ -1,5 +1,5 @@
-import jogo
-import jogo2
+import adivinhacao
+import forca
 print("selecione um jogo")
 
 print("1 - adivinhação \n2 - forca")
@@ -7,6 +7,6 @@ print("1 - adivinhação \n2 - forca")
 escolha = int(input())
 
 if(escolha == 1):
-    jogo.jogar()
+    adivinhacao.jogar()
 elif(escolha == 2):
-    jogo2.jogar()
+    forca.jogar()

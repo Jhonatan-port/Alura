@@ -7,12 +7,9 @@ def jogar():
     pontos = 1000
     pontos_perdidos = 0
 
-    #função para calcular os pontos do jogador
-    def calcula():
-        pontos_perdidos = abs(numero_s - chute)
-        return pontos_perdidos
+    
 
-    print("bem vido ao jogo de adivinhação")
+    apresentacao()
     #jogador escolhe o nivel
     while vidas == 0:
             
@@ -44,7 +41,7 @@ def jogar():
         if(chute < 1) or (chute > 100):
             print("Digite um numero de 1 a 100")
             continue
-        #Verificação se o jogador acerout ou não(retorno booleano)
+        #Verificação se o jogador acertou ou não(retorno booleano)
         acertou = chute == numero_s
         maior = chute > numero_s
         menor = chute < numero_s
@@ -59,14 +56,25 @@ def jogar():
             break
         elif(maior):
             print("o numero é menor")
-            pontos_perdidos = calcula()
+            pontos_perdidos = calcula(numero_s, chute)
         elif(menor):
             print("o numero é maior")
-            pontos_perdidos = calcula()
+            pontos_perdidos = calcula(numero_s, chute)
 
         pontos = pontos - pontos_perdidos
         
         print("")
 
+
+def apresentacao():
+    print("*******************************")
+    print("bem vido ao jogo da adivinhação")
+    print("*******************************")
+#função para calcular os pontos do jogador
+def calcula(numero_s, chute):
+    pontos_perdidos = abs(numero_s - chute)
+    return pontos_perdidos
+
+#ultima função
 if(__name__ == "__main__"):
     jogar()
